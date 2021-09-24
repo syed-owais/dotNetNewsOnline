@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="097af45812684a00b7d9f7db6007ec74" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="OnlineNewsModel.feed_contact_review" Width="1.5" PointX="5.125" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineNewsModel.flag" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineNewsModel.genre" Width="1.5" PointX="0.875" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineNewsModel.login" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineNewsModel.news" Width="1.5" PointX="5.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineNewsModel.register" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineNewsModel.role" Width="1.5" PointX="4.875" PointY="13.875" IsExpanded="true" />
+        <AssociationConnector Association="OnlineNewsModel.FK_ms_feed_contact_ms_flag" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineNewsModel.FK_ms_feed_contact_ms_register" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineNewsModel.FK_ms_register_ms_flag" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineNewsModel.FK_ms_register_ms_flag1" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineNewsModel.FK_ms_register_ms_flag2" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineNewsModel.FK_ms_login_ms_login" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineNewsModel.FK_ms_login_ms_register" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OnlineNewsModel.category" Width="1.5" PointX="3" PointY="6.125" />
+        <AssociationConnector Association="OnlineNewsModel.FK_ms_categories_ms_flag" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,123 @@
+﻿@model  OnlineNews.login
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/css")
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#"><b>NEWS Zycus</b></a>
+        </div> 
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+
+                @*<form action="../../index2.html" method="post">*@
+                @using (Html.BeginForm("Login", "Logins", FormMethod.Post))
+                {
+
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "asa", new { @class = "text-danger" })
+
+                    <div class="input-group mb-3">
+                        @*<input type="text" class="form-control" placeholder="Email">*@
+                        @Html.TextBoxFor(model => model.username, new
+                       {
+                           @class = "form-control", @placeholder="User Name",@minlength=4,
+                           @maxlength = 100,
+                           @required=true
+
+                       })
+                        @Html.ValidationMessageFor(m => m.username, "", new { @class = "text-danger" })
+
+
+                        <div class="input-group-append">
+                            <span class="fa fa-envelope input-group-text"></span>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        @*<input type="password" class="form-control" placeholder="Password">,@minlength=4,
+        @maxlength = 100,
+        @required=true*@
+                        @Html.PasswordFor(model => model.pass, new
+                        {
+                            @class = "form-control", @placeholder="Password"
+
+                        })
+                        @Html.ValidationMessageFor(m => m.pass, "", new { @class = "text-danger" })
+
+                        <div class="input-group-append">
+                            <span class="fa fa-lock input-group-text"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="checkbox icheck">
+                                <label>
+                                    <input type="checkbox" name="remember"> Remember Me
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                }
+                @*</form>*@
+
+                <div class="social-auth-links text-center mb-3 hide">
+                    <p>- OR -</p>
+                    <a href="#" class="btn btn-block btn-primary">
+                        <i class="fab fa-facebook-f mr-2"></i> Sign in using Facebook
+                    </a>
+                    <a href="#" class="btn btn-block btn-danger">
+                        <i class="fab fa-google-plus-g mr-2"></i> Sign in using Google+
+                    </a>
+                </div>
+                <!-- /.social-auth-links -->
+
+                <p class="mb-1 hide">
+                    <a href="#">I forgot my password</a>
+                </p>
+                <p class="mb-0 hide">
+                    <a href="register.html" class="text-center">Register a new membership</a>
+                </p>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    @*<script src="../../plugins/jquery/jquery.min.js"></script>*@
+    <!-- Bootstrap 4 -->
+@*<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>*@
+@Scripts.Render("~/js")
+    <script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-green',
+      radioClass   : 'iradio_square-green',
+      increaseArea : '20%' // optional
+    })
+  })
+    </script>
+</body>
+</html>

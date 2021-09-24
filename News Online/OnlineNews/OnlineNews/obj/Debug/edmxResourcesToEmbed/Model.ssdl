@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineNewsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cname" Type="varchar" MaxLength="100" />
+    <Property Name="ctype" Type="nvarchar" MaxLength="50" />
+    <Property Name="flag_id" Type="int" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="modiffiedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="createdDate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="meta_keys" Type="varchar" MaxLength="100" />
+    <Property Name="meta_description" Type="text" />
+  </EntityType>
+  <EntityType Name="feed&amp;contact&amp;review">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customers_id" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+    <Property Name="good" Type="tinyint" />
+    <Property Name="slow" Type="tinyint" />
+    <Property Name="fast" Type="tinyint" />
+    <Property Name="items_id" Type="int" />
+    <Property Name="albumId" Type="int" Nullable="false" />
+    <Property Name="parentId" Type="int" />
+    <Property Name="rating" Type="int" />
+    <Property Name="emoji_img" Type="image" />
+    <Property Name="Email" Type="nchar" MaxLength="150" />
+    <Property Name="phoneNumber" Type="nchar" MaxLength="13" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="comments" Type="text" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="flag">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="flag" Type="varchar" MaxLength="100" />
+    <Property Name="flagtype" Type="varchar" MaxLength="100" />
+    <Property Name="flagdescription" Type="text" />
+    <Property Name="createdby" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="modifiedby" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="createdDate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="genres">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="genresName" Type="varchar" MaxLength="50" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="genreImg" Type="text" />
+    <Property Name="nodifiedby" Type="varchar" MaxLength="50" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nchar" MaxLength="255" />
+    <Property Name="pass" Type="nchar" MaxLength="18" />
+    <Property Name="cpass" Type="nchar" MaxLength="18" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="roles_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="newsTitle" Type="varchar" MaxLength="255" />
+    <Property Name="newsDescription" Type="text" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="news_img" Type="text" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="modifiedby" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="createdDate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="register">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fname" Type="varchar" MaxLength="50" />
+    <Property Name="lname" Type="varchar" MaxLength="50" />
+    <Property Name="country" Type="varchar" MaxLength="150" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="phone" Type="nchar" MaxLength="13" />
+    <Property Name="gender" Type="nchar" MaxLength="10" />
+    <Property Name="dob" Type="nchar" MaxLength="15" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="255" />
+    <Property Name="companyTitle" Type="varchar" MaxLength="100" />
+    <Property Name="address1" Type="text" />
+    <Property Name="address2" Type="text" />
+    <Property Name="city" Type="varchar" MaxLength="150" />
+    <Property Name="state" Type="varchar" MaxLength="150" />
+    <Property Name="PostalCode" Type="nchar" MaxLength="16" />
+    <Property Name="Fax" Type="nchar" MaxLength="16" />
+    <Property Name="url" Type="text" />
+    <Property Name="img" Type="text" />
+    <Property Name="Payment_id" Type="nchar" MaxLength="10" />
+    <Property Name="accountTypeId" Type="int" />
+    <Property Name="cardholderName" Type="varchar" MaxLength="60" />
+    <Property Name="ExpiryDate" Type="datetime" />
+    <Property Name="CVV" Type="int" />
+    <Property Name="cardNumber" Type="nchar" MaxLength="20" />
+    <Property Name="userTypeId" Type="int" />
+    <Property Name="parentId" Type="int" />
+    <Property Name="createdDate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="flag_id" Type="int" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role" Type="varchar" MaxLength="50" />
+    <Property Name="active" Type="nchar" MaxLength="10" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="modifiedby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_ms_categories_ms_flag">
+    <End Role="flag" Type="Self.flag" Multiplicity="0..1" />
+    <End Role="categories" Type="Self.categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="categories">
+        <PropertyRef Name="flag_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_feed&amp;contact_ms_flag">
+    <End Role="flag" Type="Self.flag" Multiplicity="0..1" />
+    <End Role="feed&amp;contact&amp;review" Type="Self.feed&amp;contact&amp;review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="feed&amp;contact&amp;review">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_feed&amp;contact_ms_register">
+    <End Role="register" Type="Self.register" Multiplicity="0..1" />
+    <End Role="feed&amp;contact&amp;review" Type="Self.feed&amp;contact&amp;review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="register">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="feed&amp;contact&amp;review">
+        <PropertyRef Name="customers_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_login_ms_login">
+    <End Role="roles" Type="Self.roles" Multiplicity="0..1" />
+    <End Role="login" Type="Self.login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="login">
+        <PropertyRef Name="roles_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_login_ms_register">
+    <End Role="register" Type="Self.register" Multiplicity="0..1" />
+    <End Role="login" Type="Self.login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="register">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="login">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_register_ms_flag">
+    <End Role="flag" Type="Self.flag" Multiplicity="0..1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="flag_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_register_ms_flag1">
+    <End Role="flag" Type="Self.flag" Multiplicity="0..1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="userTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_register_ms_flag2">
+    <End Role="flag" Type="Self.flag" Multiplicity="0..1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="accountTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="media" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctypeid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ms_media" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctypeid" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="OnlineNewsModelStoreContainer">
+    <EntitySet Name="categories" EntityType="Self.categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="feed&amp;contact&amp;review" EntityType="Self.feed&amp;contact&amp;review" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flag" EntityType="Self.flag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="genres" EntityType="Self.genres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="register" EntityType="Self.register" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ms_categories_ms_flag" Association="Self.FK_ms_categories_ms_flag">
+      <End Role="flag" EntitySet="flag" />
+      <End Role="categories" EntitySet="categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_feed&amp;contact_ms_flag" Association="Self.FK_ms_feed&amp;contact_ms_flag">
+      <End Role="flag" EntitySet="flag" />
+      <End Role="feed&amp;contact&amp;review" EntitySet="feed&amp;contact&amp;review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_feed&amp;contact_ms_register" Association="Self.FK_ms_feed&amp;contact_ms_register">
+      <End Role="register" EntitySet="register" />
+      <End Role="feed&amp;contact&amp;review" EntitySet="feed&amp;contact&amp;review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_login_ms_login" Association="Self.FK_ms_login_ms_login">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="login" EntitySet="login" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_login_ms_register" Association="Self.FK_ms_login_ms_register">
+      <End Role="register" EntitySet="register" />
+      <End Role="login" EntitySet="login" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_register_ms_flag" Association="Self.FK_ms_register_ms_flag">
+      <End Role="flag" EntitySet="flag" />
+      <End Role="register" EntitySet="register" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_register_ms_flag1" Association="Self.FK_ms_register_ms_flag1">
+      <End Role="flag" EntitySet="flag" />
+      <End Role="register" EntitySet="register" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_register_ms_flag2" Association="Self.FK_ms_register_ms_flag2">
+      <End Role="flag" EntitySet="flag" />
+      <End Role="register" EntitySet="register" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

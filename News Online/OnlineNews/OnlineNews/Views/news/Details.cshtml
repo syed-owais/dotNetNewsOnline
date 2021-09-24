@@ -1,0 +1,480 @@
+﻿@model OnlineNews.news
+
+@{
+    ViewBag.Title = "Details";
+    OnlineNewsEntities db = new OnlineNewsEntities();
+    var zone  = db.categories.Where(x => x.id == Model.category_id).First();
+}
+
+<div class="container">
+    <div class="page-breadcrumbs">
+        <h1 class="section-title">@zone.cname</h1>
+        <div class="world-nav cat-menu">
+            <ul class="list-inline">
+                <li class="active"><a href="#">Us</a></li>
+                <li><a href="#">Crime</a></li>
+                <li><a href="#">Local</a></li>
+                <li><a href="#">Offbet</a></li>
+                <li><a href="#">Openion</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="row">
+            <div class="col-md-8 col-lg-9">
+                <div id="site-content" class="site-content">
+                    <div class="row">
+                        <div class="col">
+                            <div class="left-content">
+                                <div class="details-news">
+                                    <div class="post">
+                                        <div class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-fluid" src="~/Uploads/@Model.news_img" alt="Image" />
+                                            </div>
+                                        </div>
+                                        <div class="post-content">
+                                            <div class="entry-meta">
+                                                <ul class="list-inline">
+                                                    <li class="posted-by"><i class="fa fa-user"></i> by <a href="#">Owen Williams</a></li>
+                                                    <li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2018 </a></li>
+                                                    <li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+                                                    <li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+                                                    <li class="comments"><i class="fa fa-comment-o"></i><a href="#">189</a></li>
+                                                </ul>
+                                            </div>
+                                            <h2 class="entry-title">
+                                                @Model.newsTitle
+                                            </h2>
+                                            <div class="entry-content">
+                                                <p>@Model.newsDescription</p>
+
+                                                <div class="row post-inner-image">
+                                                    <div class="col-sm-4">
+                                                        <img class="img-fluid" src="~/Content/images/post/inner1.jpg" alt="Image" />
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <img class="img-fluid" src="~/Content/images/post/inner2.jpg" alt="Image" />
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <img class="img-fluid" src="~/Content/images/post/inner3.jpg" alt="Image" />
+                                                    </div>
+                                                </div><!-- post-inner-image -->
+
+                                                <p>@Model.newsDescription</p>
+
+                                                <ul class="list-inline share-link">
+                                                    <li><a href="#"><img src="~/Content/images/others/s1.png" alt="Image" /></a></li>
+                                                    <li><a href="#"><img src="~/Content/images/others/s2.png" alt="Image" /></a></li>
+                                                    <li><a href="#"><img src="~/Content/images/others/s3.png" alt="Image" /></a></li>
+                                                    <li><a href="#"><img src="~/Content/images/others/s4.png" alt="Image" /></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div><!--/post-->
+                                </div><!--/.section-->
+                            </div><!--/.left-content-->
+                        </div>
+                    </div>
+                </div><!--/#site-content-->
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="post google-add">
+                            <div class="add inner-add text-center">
+                                <a href="#"><img class="img-fluid" src="~/Content/images/post/google-add.jpg" alt="Image" /></a>
+                            </div><!--/.section-->
+                        </div><!--/.google-add-->
+
+                        <div class="comments-wrapper">
+                            <h1 class="section-title title">Comments</h1>
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="~/Content/images/others/author2.png" alt="Image"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h2><a href="#">Axel Bouaziz</a></h2>
+                                        <h3 class="date"><a href="#">15 December 2018</a></h3>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+                                        <a class="replay" href="#">Replay</a>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="~/Content/images/others/author.png" alt="Image"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h2><a href="#">Axel Bouaziz</a></h2>
+                                        <h3 class="date"><a href="#">15 December 2018</a></h3>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+                                        <a class="replay" href="#">Replay</a>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="~/Content/images/others/author1.png" alt="Image"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h2><a href="#">Axel Bouaziz</a></h2>
+                                        <h3 class="date"><a href="#">15 December 2018</a></h3>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+                                        <a class="replay" href="#">Replay</a>
+                                    </div>
+                                </li>
+
+                                <li class="media media-child">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="~/Content/images/others/author3.png" alt="Image"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h2><a href="#">Axel Bouaziz</a></h2>
+                                        <h3 class="date"><a href="#">15 December 2018</a></h3>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+                                        <a class="replay" href="#">Replay</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="comments-box">
+                                <h1 class="section-title title">Leave a Comment</h1>
+                                <form id="comment-form" name="comment-form" method="post">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" name="name" class="form-control" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input type="email" name="email" class="form-control" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Subject</label>
+                                                <input type="text" name="subject" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label>Your Text</label>
+                                                <textarea name="comment" id="comment" required="required" class="form-control" rows="5"></textarea>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-primary">Send </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <h1 class="section-title">More in Worlds</h1>
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="post medium-post">
+                                        <div class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-fluid" src="~/Content/images/post/1.jpg" alt="Image" />
+                                            </div>
+                                        </div>
+                                        <div class="post-content">
+                                            <div class="entry-meta">
+                                                <ul class="list-inline">
+                                                    <li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2018 </a></li>
+                                                    <li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+                                                    <li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+                                                </ul>
+                                            </div>
+                                            <h2 class="entry-title">
+                                                <a href="news-details.html">Our closest relatives aren't fans of daylight saving time</a>
+                                            </h2>
+                                        </div>
+                                    </div><!--/post-->
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="post medium-post">
+                                        <div class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-fluid" src="~/Content/images/post/2.jpg" alt="Image" />
+                                            </div>
+                                        </div>
+                                        <div class="post-content">
+                                            <div class="entry-meta">
+                                                <ul class="list-inline">
+                                                    <li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2018 </a></li>
+                                                    <li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+                                                    <li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+                                                </ul>
+                                            </div>
+                                            <h2 class="entry-title">
+                                                <a href="news-details.html">Our closest relatives aren't fans of daylight saving time</a>
+                                            </h2>
+                                        </div>
+                                    </div><!--/post-->
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="post medium-post">
+                                        <div class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-fluid" src="~/Content/images/post/3.jpg" alt="Image" />
+                                            </div>
+                                        </div>
+                                        <div class="post-content">
+                                            <div class="entry-meta">
+                                                <ul class="list-inline">
+                                                    <li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2018 </a></li>
+                                                    <li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+                                                    <li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+                                                </ul>
+                                            </div>
+                                            <h2 class="entry-title">
+                                                <a href="news-details.html">Our closest relatives aren't fans of daylight saving time</a>
+                                            </h2>
+                                        </div>
+                                    </div><!--/post-->
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="post medium-post">
+                                        <div class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-fluid" src="~/Content/images/post/4.jpg" alt="Image" />
+                                            </div>
+                                        </div>
+                                        <div class="post-content">
+                                            <div class="entry-meta">
+                                                <ul class="list-inline">
+                                                    <li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2018 </a></li>
+                                                    <li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+                                                    <li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+                                                </ul>
+                                            </div>
+                                            <h2 class="entry-title">
+                                                <a href="news-details.html">Our closest relatives aren't fans of daylight saving time</a>
+                                            </h2>
+                                        </div>
+                                    </div><!--/post-->
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="post medium-post">
+                                        <div class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-fluid" src="~/Content/images/post/5.jpg" alt="Image" />
+                                            </div>
+                                        </div>
+                                        <div class="post-content">
+                                            <div class="entry-meta">
+                                                <ul class="list-inline">
+                                                    <li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2018 </a></li>
+                                                    <li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+                                                    <li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+                                                </ul>
+                                            </div>
+                                            <h2 class="entry-title">
+                                                <a href="news-details.html">Our closest relatives aren't fans of daylight saving time</a>
+                                            </h2>
+                                        </div>
+                                    </div><!--/post-->
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="post medium-post">
+                                        <div class="entry-header">
+                                            <div class="entry-thumbnail">
+                                                <img class="img-fluid" src="~/Content/images/post/6.jpg" alt="Image" />
+                                            </div>
+                                        </div>
+                                        <div class="post-content">
+                                            <div class="entry-meta">
+                                                <ul class="list-inline">
+                                                    <li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2018 </a></li>
+                                                    <li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+                                                    <li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+                                                </ul>
+                                            </div>
+                                            <h2 class="entry-title">
+                                                <a href="news-details.html">Our closest relatives aren't fans of daylight saving time</a>
+                                            </h2>
+                                        </div>
+                                    </div><!--/post-->
+                                </div>
+                            </div>
+                        </div><!--/.section -->
+                    </div>
+                </div>
+            </div><!--/.col-sm-9 -->
+
+            <div class="col-md-4 col-lg-3 tr-sticky">
+                <div id="sitebar" class="theiaStickySidebar">
+                    <div class="widget">
+                        <div class="add featured-add">
+                            <a href="#"><img class="img-fluid" src="~/Content/images/post/add/add1.jpg" alt="Image" /></a>
+                        </div>
+                    </div><!--/#widget-->
+
+                    <div class="widget follow-us">
+                        <h1 class="section-title title">Follow Us</h1>
+                        <ul class="list-inline social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div><!--/#widget-->
+
+                    <div class="widget">
+                        <h1 class="section-title title">This is Rising!</h1>
+                        <ul class="post-list">
+                            <li>
+                                <div class="post small-post">
+                                    <div class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <img class="img-fluid" src="~/Content/images/post/rising/1.jpg" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="video-catagory"><a href="#">World</a></div>
+                                        <h2 class="entry-title">
+                                            <a href="news-details.html">3 students arrested after body-slamming principal</a>
+                                        </h2>
+                                    </div>
+                                </div><!--/post-->
+                            </li>
+                            <li>
+                                <div class="post small-post">
+                                    <div class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <img class="img-fluid" src="~/Content/images/post/rising/2.jpg" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="video-catagory"><a href="#">Business</a></div>
+                                        <h2 class="entry-title">
+                                            <a href="news-details.html">3 students arrested after body-slamming principal</a>
+                                        </h2>
+                                    </div>
+                                </div><!--/post-->
+                            </li>
+                            <li>
+                                <div class="post small-post">
+                                    <div class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <img class="img-fluid" src="~/Content/images/post/rising/3.jpg" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="video-catagory"><a href="#">Sports</a></div>
+                                        <h2 class="entry-title">
+                                            <a href="news-details.html">3 students arrested after body-slamming principal</a>
+                                        </h2>
+                                    </div>
+                                </div><!--/post-->
+                            </li>
+                            <li>
+                                <div class="post small-post">
+                                    <div class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <img class="img-fluid" src="~/Content/images/post/rising/4.jpg" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="video-catagory"><a href="#">Technology</a></div>
+                                        <h2 class="entry-title">
+                                            <a href="news-details.html">3 students arrested after body-slamming principal</a>
+                                        </h2>
+                                    </div>
+                                </div><!--/post-->
+                            </li>
+                            <li>
+                                <div class="post small-post">
+                                    <div class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <img class="img-fluid" src="~/Content/images/post/rising/5.jpg" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="video-catagory"><a href="#">Politics</a></div>
+                                        <h2 class="entry-title">
+                                            <a href="news-details.html">3 students arrested after body-slamming principal</a>
+                                        </h2>
+                                    </div>
+                                </div><!--/post-->
+                            </li>
+                            <li>
+                                <div class="post small-post">
+                                    <div class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <img class="img-fluid" src="~/Content/images/post/rising/6.jpg" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="video-catagory"><a href="#">Health</a></div>
+                                        <h2 class="entry-title">
+                                            <a href="news-details.html">3 students arrested after body-slamming principal</a>
+                                        </h2>
+                                    </div>
+                                </div><!--/post-->
+                            </li>
+                            <li>
+                                <div class="post small-post">
+                                    <div class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <img class="img-fluid" src="~/Content/images/post/rising/7.jpg" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="video-catagory"><a href="#">Lifestyle</a></div>
+                                        <h2 class="entry-title">
+                                            <a href="news-details.html">3 students arrested after body-slamming principal</a>
+                                        </h2>
+                                    </div>
+                                </div><!--/post-->
+                            </li>
+                            <li>
+                                <div class="post small-post">
+                                    <div class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <img class="img-fluid" src="~/Content/images/post/rising/8.jpg" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="video-catagory"><a href="#">Entertainment</a></div>
+                                        <h2 class="entry-title">
+                                            <a href="news-details.html">3 students arrested after body-slamming principal</a>
+                                        </h2>
+                                    </div>
+                                </div><!--/post-->
+                            </li>
+                            <li>
+                                <div class="post small-post">
+                                    <div class="entry-header">
+                                        <div class="entry-thumbnail">
+                                            <img class="img-fluid" src="~/Content/images/post/7.jpg" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="post-content">
+                                        <div class="video-catagory"><a href="#">Business</a></div>
+                                        <h2 class="entry-title">
+                                            <a href="news-details.html">3 students arrested after body-slamming principal</a>
+                                        </h2>
+                                    </div>
+                                </div><!--/post-->
+                            </li>
+
+                        </ul>
+                    </div><!--/#widget-->
+                </div><!--/#sitebar-->
+            </div>
+        </div>
+    </div><!--/.section-->
+</div><!--/.container-->
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

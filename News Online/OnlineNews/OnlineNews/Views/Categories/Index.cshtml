@@ -1,0 +1,78 @@
+﻿@model IEnumerable<OnlineNews.category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_backend.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 512px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>@TempData["mainHead"]</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">@TempData["breadcrumb"]</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- Form Element sizes -->
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">@TempData["cardTitle"]</h3>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatable" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Zone</th>
+                                        <th>Category</th>
+                                        <th>Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.cname)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ctype)
+                                            </td>
+                                            <td>
+                                                <a href="/categories/Edit/@item.id"><i class="fa fa-edit text-warning"></i></a>
+                                                <a href="/categories/Delete/@item.id"><i class="fa fa-trash text-danger"></i></a>
+                                                @*@Html.ActionLink("Details", "Details", new { id = item.id })*@
+                                            </td>
+                                        </tr>
+                                    }
+
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (left) -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+ 

@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    OnlineNewsEntities db = new OnlineNewsEntities();
+}
+
+<div class="container">
+    <div class="page-breadcrumbs">
+        <h1 class="section-title">Lifestyle</h1>
+        <div class="world-nav cat-menu">
+            <ul class="list-inline">
+                <li class="active"><a href="#">Movie Time</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Health</a></li>
+                <li><a href="#">Travel & Tour</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <div class="row">
+            <div class="col-md-8 col-lg-9">
+                <div id="site-content" class="site-content">
+                    <div class="lifestyle-news">
+                        <div class="post">
+                            <div class="entry-header">
+                                <div class="entry-thumbnail">
+                                    <img class="img-fluid" src="~/Content/images/post/w3.jpg" alt="Image" />
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="entry-meta">
+                                    <ul class="list-inline">
+                                        <li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2018 </a></li>
+                                        <li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+                                        <li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+                                        <li class="comments"><i class="fa fa-comment-o"></i><a href="#">189</a></li>
+                                    </ul>
+                                </div>
+                                <h2 class="entry-title">
+                                    <a href="#">Minimum Wage Rise In San Francisco</a>
+                                </h2>
+                                <div class="entry-content">
+                                    <p>Text of the printing and typesetting industry orem Ipsum has been the industry standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book dummy text ever since ......</p>
+                                </div>
+                            </div>
+                        </div><!--/post-->
+                    </div><!--/.section-->
+                    <div class="section listing-news">
+                        @{int count = 1;}
+                        @foreach (var item in db.news.Where(x => x.category_id == 9))
+                        {
+                            var zone = db.categories.Where(x => x.id == item.category_id).First();
+                            <div class="post">
+                            <div class="entry-header">
+                                <div class="entry-thumbnail">
+                                    <img class="img-fluid" src="~/Uploads/@item.news_img" alt="Image" />
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="entry-meta">
+                                    <ul class="list-inline">
+                                        <li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> @item.createdDate.ToString("MMM dd, yyyy") </a></li>
+                                        <li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+                                        <li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+                                    </ul>
+                                </div>
+                                <h2 class="entry-title">
+                                    <a href="news-details.html">@item.newsTitle</a>
+                                </h2>
+                                <div class="entry-content">
+                                    <p>@item.newsDescription.Substring(0, Math.Min(item.newsTitle.Length, 200))...</p>
+                                </div>
+                            </div>
+                        </div><!--/post-->
+
+                            { count++; }
+                        }
+                    </div>
+                </div><!--/#site-content-->
+
+                <div class="pagination-wrapper">
+                    <ul class="pagination">
+                        <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-long-arrow-left"></i> Previous Page</span></a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li class="active"><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                        <li><a href="#" aria-label="Next"><span aria-hidden="true">Next Page <i class="fa fa-long-arrow-right"></i></span></a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-sm-9 -->
+
+            <div id="sticky" class="col-md-4 col-lg-3 tr-sticky">
+                <div id="sitebar" class="theiaStickySidebar">
+                    <div class="widget">
+                        <div class="add featured-add">
+                            <a href="#"><img class="img-fluid" src="images/post/add/add1.jpg" alt="Image" /></a>
+                        </div>
+                    </div><!--/#widget-->
+
+                    <div class="widget follow-us">
+                        <h1 class="section-title title">Follow Us</h1>
+                        <ul class="list-inline social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div><!--/#widget-->
+                </div><!--/#sitebar-->
+            </div>
+        </div>
+    </div><!--/.section-->
+</div><!--/.container-->

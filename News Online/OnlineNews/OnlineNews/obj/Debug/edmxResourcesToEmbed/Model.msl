@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlineNewsModelStoreContainer" CdmEntityContainer="OnlineNewsEntities">
+    <EntitySetMapping Name="feed_contact_review">
+      <EntityTypeMapping TypeName="OnlineNewsModel.feed_contact_review">
+        <MappingFragment StoreEntitySet="feed&amp;contact&amp;review">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customers_id" ColumnName="customers_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="good" ColumnName="good" />
+          <ScalarProperty Name="slow" ColumnName="slow" />
+          <ScalarProperty Name="fast" ColumnName="fast" />
+          <ScalarProperty Name="items_id" ColumnName="items_id" />
+          <ScalarProperty Name="albumId" ColumnName="albumId" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="emoji_img" ColumnName="emoji_img" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flags">
+      <EntityTypeMapping TypeName="OnlineNewsModel.flag">
+        <MappingFragment StoreEntitySet="flag">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="flag1" ColumnName="flag" />
+          <ScalarProperty Name="flagtype" ColumnName="flagtype" />
+          <ScalarProperty Name="flagdescription" ColumnName="flagdescription" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="genres">
+      <EntityTypeMapping TypeName="OnlineNewsModel.genre">
+        <MappingFragment StoreEntitySet="genres">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="genresName" ColumnName="genresName" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="genreImg" ColumnName="genreImg" />
+          <ScalarProperty Name="nodifiedby" ColumnName="nodifiedby" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins">
+      <EntityTypeMapping TypeName="OnlineNewsModel.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="cpass" ColumnName="cpass" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="roles_Id" ColumnName="roles_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="news">
+      <EntityTypeMapping TypeName="OnlineNewsModel.news">
+        <MappingFragment StoreEntitySet="news">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="newsTitle" ColumnName="newsTitle" />
+          <ScalarProperty Name="newsDescription" ColumnName="newsDescription" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="news_img" ColumnName="news_img" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="registers">
+      <EntityTypeMapping TypeName="OnlineNewsModel.register">
+        <MappingFragment StoreEntitySet="register">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="companyTitle" ColumnName="companyTitle" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="Payment_id" ColumnName="Payment_id" />
+          <ScalarProperty Name="accountTypeId" ColumnName="accountTypeId" />
+          <ScalarProperty Name="cardholderName" ColumnName="cardholderName" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="cardNumber" ColumnName="cardNumber" />
+          <ScalarProperty Name="userTypeId" ColumnName="userTypeId" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="OnlineNewsModel.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role1" ColumnName="role" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="media" FunctionName="OnlineNewsModel.Store.media" />
+    <FunctionImportMapping FunctionImportName="ms_media" FunctionName="OnlineNewsModel.Store.ms_media" />
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="OnlineNewsModel.category">
+        <MappingFragment StoreEntitySet="categories">
+          <ScalarProperty Name="meta_description" ColumnName="meta_description" />
+          <ScalarProperty Name="meta_keys" ColumnName="meta_keys" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modiffiedby" ColumnName="modiffiedby" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="flag_id" ColumnName="flag_id" />
+          <ScalarProperty Name="ctype" ColumnName="ctype" />
+          <ScalarProperty Name="cname" ColumnName="cname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

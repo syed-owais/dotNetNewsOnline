@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineNewsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="feed_contact_review">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customers_id" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="good" Type="Byte" />
+    <Property Name="slow" Type="Byte" />
+    <Property Name="fast" Type="Byte" />
+    <Property Name="items_id" Type="Int32" />
+    <Property Name="albumId" Type="Int32" Nullable="false" />
+    <Property Name="parentId" Type="Int32" />
+    <Property Name="rating" Type="Int32" />
+    <Property Name="emoji_img" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+    <Property Name="phoneNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+    <Property Name="TypeId" Type="Int32" />
+    <Property Name="comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="flag" Relationship="Self.FK_ms_feed_contact_ms_flag" FromRole="feed_contact_review" ToRole="flag" />
+    <NavigationProperty Name="register" Relationship="Self.FK_ms_feed_contact_ms_register" FromRole="feed_contact_review" ToRole="register" />
+  </EntityType>
+  <EntityType Name="flag">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="flag1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="flagtype" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="flagdescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="createdby" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="modifiedby" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="feed_contact_review" Relationship="Self.FK_ms_feed_contact_ms_flag" FromRole="flag" ToRole="feed_contact_review" />
+    <NavigationProperty Name="registers" Relationship="Self.FK_ms_register_ms_flag" FromRole="flag" ToRole="register" />
+    <NavigationProperty Name="registers1" Relationship="Self.FK_ms_register_ms_flag1" FromRole="flag" ToRole="register" />
+    <NavigationProperty Name="registers2" Relationship="Self.FK_ms_register_ms_flag2" FromRole="flag" ToRole="register" />
+    <NavigationProperty Name="categories" Relationship="OnlineNewsModel.FK_ms_categories_ms_flag" FromRole="flag" ToRole="category" />
+  </EntityType>
+  <EntityType Name="genre">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="genresName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="genreImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="nodifiedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="pass" Type="String" MaxLength="18" FixedLength="true" Unicode="true" />
+    <Property Name="cpass" Type="String" MaxLength="18" FixedLength="true" Unicode="true" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="roles_Id" Type="Int32" />
+    <NavigationProperty Name="role" Relationship="Self.FK_ms_login_ms_login" FromRole="login" ToRole="roles" />
+    <NavigationProperty Name="register" Relationship="Self.FK_ms_login_ms_register" FromRole="login" ToRole="register" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="newsTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="newsDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="news_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modifiedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="register">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="dob" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="companyTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="address2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+    <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Payment_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="accountTypeId" Type="Int32" />
+    <Property Name="cardholderName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="CVV" Type="Int32" />
+    <Property Name="cardNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="userTypeId" Type="Int32" />
+    <Property Name="parentId" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="flag_id" Type="Int32" />
+    <NavigationProperty Name="feed_contact_review" Relationship="Self.FK_ms_feed_contact_ms_register" FromRole="register" ToRole="feed_contact_review" />
+    <NavigationProperty Name="flag" Relationship="Self.FK_ms_register_ms_flag" FromRole="register" ToRole="flag" />
+    <NavigationProperty Name="flag1" Relationship="Self.FK_ms_register_ms_flag1" FromRole="register" ToRole="flag" />
+    <NavigationProperty Name="flag2" Relationship="Self.FK_ms_register_ms_flag2" FromRole="register" ToRole="flag" />
+    <NavigationProperty Name="logins" Relationship="Self.FK_ms_login_ms_register" FromRole="register" ToRole="login" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modifiedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="logins" Relationship="Self.FK_ms_login_ms_login" FromRole="roles" ToRole="login" />
+  </EntityType>
+  <Association Name="FK_ms_feed_contact_ms_flag">
+    <End Role="flag" Type="Self.flag" Multiplicity="0..1" />
+    <End Role="feed_contact_review" Type="Self.feed_contact_review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="feed_contact_review">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_feed_contact_ms_register">
+    <End Role="register" Type="Self.register" Multiplicity="0..1" />
+    <End Role="feed_contact_review" Type="Self.feed_contact_review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="register">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="feed_contact_review">
+        <PropertyRef Name="customers_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_register_ms_flag">
+    <End Role="flag" Type="Self.flag" Multiplicity="0..1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="flag_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_register_ms_flag1">
+    <End Role="flag" Type="Self.flag" Multiplicity="0..1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="userTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_register_ms_flag2">
+    <End Role="flag" Type="Self.flag" Multiplicity="0..1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="accountTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_login_ms_login">
+    <End Role="roles" Type="Self.role" Multiplicity="0..1" />
+    <End Role="login" Type="Self.login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="login">
+        <PropertyRef Name="roles_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ms_login_ms_register">
+    <End Role="register" Type="Self.register" Multiplicity="0..1" />
+    <End Role="login" Type="Self.login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="register">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="login">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlineNewsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="feed_contact_review" EntityType="Self.feed_contact_review" />
+    <EntitySet Name="flags" EntityType="Self.flag" />
+    <EntitySet Name="genres" EntityType="Self.genre" />
+    <EntitySet Name="logins" EntityType="Self.login" />
+    <EntitySet Name="news" EntityType="Self.news" />
+    <EntitySet Name="registers" EntityType="Self.register" />
+    <EntitySet Name="roles" EntityType="Self.role" />
+    <AssociationSet Name="FK_ms_feed_contact_ms_flag" Association="Self.FK_ms_feed_contact_ms_flag">
+      <End Role="flag" EntitySet="flags" />
+      <End Role="feed_contact_review" EntitySet="feed_contact_review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_feed_contact_ms_register" Association="Self.FK_ms_feed_contact_ms_register">
+      <End Role="register" EntitySet="registers" />
+      <End Role="feed_contact_review" EntitySet="feed_contact_review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_register_ms_flag" Association="Self.FK_ms_register_ms_flag">
+      <End Role="flag" EntitySet="flags" />
+      <End Role="register" EntitySet="registers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_register_ms_flag1" Association="Self.FK_ms_register_ms_flag1">
+      <End Role="flag" EntitySet="flags" />
+      <End Role="register" EntitySet="registers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_register_ms_flag2" Association="Self.FK_ms_register_ms_flag2">
+      <End Role="flag" EntitySet="flags" />
+      <End Role="register" EntitySet="registers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_login_ms_login" Association="Self.FK_ms_login_ms_login">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="login" EntitySet="logins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ms_login_ms_register" Association="Self.FK_ms_login_ms_register">
+      <End Role="register" EntitySet="registers" />
+      <End Role="login" EntitySet="logins" />
+    </AssociationSet>
+    <FunctionImport Name="media">
+      <Parameter Name="doctypeid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ms_media">
+      <Parameter Name="doctypeid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="categories" EntityType="OnlineNewsModel.category" />
+    <AssociationSet Name="FK_ms_categories_ms_flag" Association="OnlineNewsModel.FK_ms_categories_ms_flag">
+      <End Role="flag" EntitySet="flags" />
+      <End Role="category" EntitySet="categories" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ctype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="flag_id" Type="Int32" />
+    <Property Name="createdby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modiffiedby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="meta_keys" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="meta_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="flag" Relationship="OnlineNewsModel.FK_ms_categories_ms_flag" FromRole="category" ToRole="flag" />
+  </EntityType>
+  <Association Name="FK_ms_categories_ms_flag">
+    <End Type="OnlineNewsModel.flag" Role="flag" Multiplicity="0..1" />
+    <End Type="OnlineNewsModel.category" Role="category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="flag">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="category">
+        <PropertyRef Name="flag_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
